@@ -1,20 +1,20 @@
 import java.util.*;
 
-public class Product {
+public class ARGBCards {
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        // スペース区切りの整数の入力
-        int a = sc.nextInt();
+        // 整数の入力
+        int r = sc.nextInt();
+        int g = sc.nextInt();
         int b = sc.nextInt();
         sc.close();
-
-        if ((a * b) % 2 == 0) {
+        if ((r * 100 + g * 10 + b) % 4 == 0) {
             // 出力
-            System.out.println("Even");
+            System.out.println("YES");
         } else {
             // 出力
-            System.out.println("Odd");
+            System.out.println("NO");
         }
 
     }
