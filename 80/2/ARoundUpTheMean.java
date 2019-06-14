@@ -1,5 +1,5 @@
 import java.util.*;
-public class aRoundUpTheMean {
+public class ARoundUpTheMean {
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		// 整数の入力

@@ -1,3 +1,5 @@
+package beginners;
+
 import java.util.*;
 
 public class CardGame {

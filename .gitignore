@@ -1,6 +1,12 @@
+.vscode
+
+#C++
+*.o
+
 # Java
 *.class
 *.jar
 *.war
 *.ear
-/Study/*
+
+Study

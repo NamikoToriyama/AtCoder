@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+  int p,q,r, result;
+  cin >> p >> q >> r;
+  
+  cout << result << endl;
+
+}
