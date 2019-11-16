@@ -1,4 +1,4 @@
-package beginners;
+
 
 import java.util.*;
 

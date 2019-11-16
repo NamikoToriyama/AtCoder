@@ -6,19 +6,14 @@
 #include <algorithm>
 #include <tuple>
 
-#include <bits/stdc++.h>
 using namespace std;
 #define ll long long
 #define pb push_back
 
-int main()
-{
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i]
-    }
-    cout << endl;
+int main() {
+  int X;
+  cin >> X;
+
+  if(X==3 || X==5 || X==7) cout << "YES" << endl;
+  else cout << "NO" << endl;
 }

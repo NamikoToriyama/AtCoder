@@ -6,19 +6,22 @@
 #include <algorithm>
 #include <tuple>
 
-#include <bits/stdc++.h>
 using namespace std;
 #define ll long long
 #define pb push_back
 
 int main()
 {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
+    // g++ -std=c++11 -o a.o a.cpp
+    int n, a, b;
+    cin >> n >> a >> b;
+    if (a * n > b)
     {
-        cin >> a[i]
+        cout << b << endl;
     }
-    cout << endl;
+    else
+    {
+        cout << a * n << endl;
+    }
+
 }

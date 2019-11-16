@@ -6,19 +6,16 @@
 #include <algorithm>
 #include <tuple>
 
-#include <bits/stdc++.h>
 using namespace std;
 #define ll long long
 #define pb push_back
 
-int main()
-{
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i]
-    }
-    cout << endl;
+int main() { // 2min
+  int N,A,B;
+  cin >> N;
+  if(N==1) cout << "Hello World" << endl;
+  if(N==2) {
+      cin >> A >> B;
+      cout << A+B << endl;
+  }
 }

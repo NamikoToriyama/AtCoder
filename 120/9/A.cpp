@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+
 using namespace std;
 
 int main()
@@ -19,6 +20,12 @@ int main()
     {
         result = p + q;
     }
-
     cout << result << endl;
+
+    // 解説ではmax関数を使っている
+    // コンパイル
+    // g++ -std=c++11 -o a.o A.cpp
+    cout << p + q + r - max({p, q, r}) << endl;
+
+    return 0;
 }
