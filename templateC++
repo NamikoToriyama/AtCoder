@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include <tuple>
+//#include <tuple>
 
 //#include <bits/stdc++.h>
 using namespace std;
@@ -15,6 +15,6 @@ int main() {
   int N;
   cin >> N;
   
-  cout << cnt << endl;
+  cout << N << endl;
 
 }
