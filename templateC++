@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iomanip>
+
 //#include <tuple>
 
 //#include <bits/stdc++.h>
@@ -15,6 +17,6 @@ int main() {
   int N;
   cin >> N;
   
-  cout << N << endl;
+  cout << setprecision(7) << N << endl;
 
 }
