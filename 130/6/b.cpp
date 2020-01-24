@@ -10,14 +10,22 @@
 
 //#include <bits/stdc++.h>
 using namespace std;
-#define rep(i, n) for(int i = 0; i < (int)n; i++)
 #define ll long long
 #define pb push_back
+
+unsigned GetDigit(unsigned num)
+{
+  return log10(num);
+}
 
 int main() {
   int N;
   cin >> N;
+  int  cnt = 0;
+  for (int i = 1; i <= N; i++) {
+    if (GetDigit(i) % 2 == 0) cnt++;
+  }
   
-  cout << setprecision(7) << N << endl;
+  cout << cnt << endl;
 
 }

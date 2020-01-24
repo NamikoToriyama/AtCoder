@@ -10,14 +10,12 @@
 
 //#include <bits/stdc++.h>
 using namespace std;
-#define rep(i, n) for(int i = 0; i < (int)n; i++)
 #define ll long long
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
+  int A, B, T;
+  cin >> A >> B >> T;
+  cout << B*(T/A) << endl;
   
-  cout << setprecision(7) << N << endl;
-
 }

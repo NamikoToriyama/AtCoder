@@ -10,14 +10,15 @@
 
 //#include <bits/stdc++.h>
 using namespace std;
-#define rep(i, n) for(int i = 0; i < (int)n; i++)
 #define ll long long
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  
-  cout << setprecision(7) << N << endl;
-
+  ll A, B;
+  cin >> A >> B;
+  if ((A+B)%2 == 0) {
+      cout << (A+B)/2 << endl;
+  } else {
+      cout << "IMPOSSIBLE" << endl;
+  }
 }

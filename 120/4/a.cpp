@@ -15,9 +15,18 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
+  int A, B;
+  cin >> A >> B;
+  int x;
+  if (A < B) {
+    x = B;
+    B--;
+  } else {
+    x = A;
+    A--;
+  }
   
-  cout << setprecision(7) << N << endl;
+  x += max(A, B);
+  cout << x << endl;
 
 }

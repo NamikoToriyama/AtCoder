@@ -15,9 +15,18 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
+  int N, H;
+  int cnt = 0; // 最初の山は必ず見える
+  int max_mount = 0;
+
   cin >> N;
+  rep(i, N){
+    cin >> H;
+    if (max_mount <= H) cnt++;
+    max_mount = max(max_mount, H);
+
+  }
   
-  cout << setprecision(7) << N << endl;
+  cout << cnt << endl;
 
 }

@@ -15,9 +15,13 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  
-  cout << setprecision(7) << N << endl;
+  int N, D;
+  cin >> N >> D;
+  if (N%((2*D)+1)) {
+    cout << N/(2*D+1)+1 << endl;
+
+  } else {
+    cout << N/(2*D+1) << endl;
+  }
 
 }
