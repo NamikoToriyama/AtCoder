@@ -30,6 +30,7 @@ int main() {
     else if (a[i] > 0) plus++;
     else minus++;
   }
+  
   cout << setprecision(7) << N << endl;
 
 }
