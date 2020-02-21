@@ -39,7 +39,10 @@ int main() {
   }
 
   // それぞれについての最大公約数を求める
-  
-  cout << setprecision(7) << N << endl;
+  long tmp = a[0];
+  rep(i, N){
+    tmp = euclid(tmp, a[i]);
+  }
+  cout << tmp << endl;
 
 }
