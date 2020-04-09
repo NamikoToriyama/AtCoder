@@ -12,6 +12,8 @@ using namespace std;
 #define ll unsigned long long int
 #define pb push_back
 
+// 実装は良かったけど、オーバフローが原因だった
+
 ll gcd(ll c, ll d){ // 最大公約数を求めるプログラム
     ll mx = max(c,d);
     ll mi = min(c,d);
