@@ -7,6 +7,8 @@
 #include <iomanip>
 
 //#include <bits/stdc++.h>
+
+// 最小の場合が解の時のケースが入っていなかった
 using namespace std;
 #define rep(i, n) for(int i = 0; i < (int)n; i++)
 #define ll long long
@@ -31,32 +33,35 @@ long euclid(long c, long d){ // 最大公約数を求めるプログラム
 int main() {
   int N;
   cin >> N;
-  vector<int> a(N);
+  vector<long> a(N);
   
   rep(i, N){
     cin >> a[i];
   }
 
   long min_num = euclid(a[N-1], a[0]);
-  int tmp, index = 0;
+  long tmp, index = 0;
   for(int i = 1; i < N; i++){
     tmp = euclid(a[i-1], a[i]);
-    if(tmp < min_num){
+    if(tmp <= min_num){
       index = i;
+      min_num = tmp;
     }
   }
 
-  // 可能性としてあるのは前後2通りなので両方試す
-  vector<int> b;
-  vector<int> c;
+
+  vector<long> b;
+  vector<long> c;
+  // index番目
   rep(i, N) {
     if (i == index) continue;
     else {
       b.push_back(a[i]);
     }
   }
-  // 2通り目
-  if (index == 0) {
+
+  // indexの前後
+  if (index == 0) { // この場合はN-1番目がいらない
     for(int i = 0; i < N-1; i++){
       c.push_back(a[i]);
     }
@@ -68,16 +73,29 @@ int main() {
       }
     }
   }
-  
-  int b_ans, c_ans;
+
+  int count = 0;
+  for(int i = 1; i < N; i++){ // min_num自身が最小の場合
+    tmp = euclid(a[i], min_num);
+    if(tmp != min_num){
+      count++;
+    }
+  }
+
+
+  long b_ans, c_ans;
   // 最初の一つ目
   b_ans = euclid(b[N-2], b[0]);
   c_ans = euclid(c[N-2], c[0]);
-  for(int i = 1; i < N-2; i++){
+  for(int i = 0; i < N-2; i++){
     b_ans = euclid(b_ans, b[i]);
     c_ans = euclid(c_ans, c[i]);
   }
 
+  if (count == 1){
+    b_ans = max(min_num, b_ans);
+  }
+  
   cout << max(b_ans, c_ans) << endl;
 
 }
