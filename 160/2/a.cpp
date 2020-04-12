@@ -13,9 +13,10 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  
-  cout << setprecision(7) << N << endl;
+  string s;
+  cin >> s;
 
+  if (s[0] == '7' || s[1] == '7' || s[2] == '7') cout << "Yes" << endl;
+  else cout << "No" << endl;
+  
 }

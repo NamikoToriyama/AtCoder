@@ -15,7 +15,14 @@ using namespace std;
 int main() {
   int N;
   cin >> N;
+  ll sum = 0;
+
+  rep(i, N){
+    int k = i + 1;
+    if (k % 5 == 0 || k % 3 == 0) continue;
+    else sum += k;
+  }
   
-  cout << setprecision(7) << N << endl;
+  cout << sum << endl;
 
 }
