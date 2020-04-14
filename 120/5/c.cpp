@@ -9,6 +9,7 @@
 //#include <bits/stdc++.h>
 
 // 最小の場合が解の時のケースが入っていなかった
+// 想定解はおそらくこれではない
 using namespace std;
 #define rep(i, n) for(int i = 0; i < (int)n; i++)
 #define ll long long
@@ -77,7 +78,7 @@ int main() {
   int count = 0;
   for(int i = 1; i < N; i++){ // min_num自身が最小の場合
     tmp = euclid(a[i], min_num);
-    if(tmp != min_num){
+    if(tmp != min_num){ // これが1こだけならmin_numを最小の値にすることができる
       count++;
     }
   }
