@@ -38,13 +38,6 @@ int main() {
       dp[i+1][sum_w] = max(dp[i+1][sum_w], dp[i][sum_w]);
     }
   }
-
-  // rep(i, 7){
-  //   rep(j, 15){
-  //     cout << dp[i][j] << " " ;
-  //   }
-  //   cout << endl;
-  // }
   
   cout << dp[N][W] << endl;
 
