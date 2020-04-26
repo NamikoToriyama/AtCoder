@@ -15,9 +15,9 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  string A, B, C;
+  cin >> A >> B;
+  C = A.size() > B.size() ? A : B;
+  print(C);
 
 }
