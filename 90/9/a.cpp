@@ -17,8 +17,13 @@ using namespace std;
 
 int main() {
   int N;
+  string ans="";
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
 
+  if(N < 1000){
+    ans = "ABC";
+  } else {
+    ans = "ABD";
+  }
+  print(ans);
 }

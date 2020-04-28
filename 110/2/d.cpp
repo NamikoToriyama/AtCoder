@@ -16,9 +16,15 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  ll N, M, ans;
+  cin >> N >> M;
+  ll a = M/N;
 
+  for(int i = a; i > 0; i--){
+    if(M % i == 0) {
+      ans = i;
+      break;
+    }
+  }
+  print(ans);
 }
