@@ -13,40 +13,46 @@ using namespace std;
 #define ll long long int
 #define pb push_back
 
-int main() {
-  int N, D;
-  ll W=0;
-  cin >> N >> D;
-  // vector<ll> p(N);
-  vector<vector<ll> > dp(N+10, vector<ll>(600+10, 0));
-  // vector<ll> cnt(100*100+10, 0);
+const long long INF = 1LL << 60;
 
-  for (int dice = 1; dice <= 6; dice++){ // 初期値を代入
-    dp[1][dice]++;
+
+int main() {
+  ll N, D, D1;
+  cin >> N >> D;
+  D1 = D;
+  int c2=0,c3=0,c5=0;
+  while(D1%2==0){D1/=2;c2++;}
+  while(D1%3==0){D1/=3;c3++;}
+  while(D1%5==0){D1/=5;c5++;}
+
+  if(D1 != 1){ // 2, 3, 5以外の素因数がある場合
+    cout << 0.0 << endl;
+    return 0;
   }
-  
-  for(int i = 1; i <= N; i++){
-    for(int j = 0; j <= 600; j++){
-      if(dp[i][j]==0) continue;
-      for (int dice = 1; dice <= 6; dice++) {
-        dp[i+1][j+dice] += dp[i][j] + 1;
+
+  int dx[6] = {0, 1, 0, 2, 0, 1};
+  int dy[6] = {0, 0, 1, 0, 0, 1};
+  int dz[6] = {0, 0, 0, 0, 1, 0};
+  double dp[N][60][60][60];
+  rep(i, N) rep(j, 2*N) rep(k, N) rep(l, N) dp[i][j][k][l] = 0.0;
+  dp[0][0][0][0] = 1;
+
+  rep(i, N+1){ // N回まわす
+    rep(a, c2){
+      rep(b, c3){
+        rep(c, c5){
+          rep(dice, 6){
+            a+=dx[dice];
+            b+=dy[dice];
+            c+=dz[dice];
+            dp[i][a][b][c]
+              cout << endl;
+          }
+        }
       }
     }
   }
-  rep(i, N+1){
-    rep(j, 30){
-      cout << dp[i][j] << " " ;
-    }
-    cout << endl;
-  }
-
-  double ans = 0, sum=0;
-  for(int i = 1; i <= 600; i++){
-    if(i%D==0) ans+=dp[N][i];
-    sum += dp[N][i];
-  }
-  cout << sum << " " << ans<< endl;
   
-  cout<< setprecision(7) << ans/sum << endl;
+  cout << dp[N][c2][c3][c5] << endl;
 
 }
