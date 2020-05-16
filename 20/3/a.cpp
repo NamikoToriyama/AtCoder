@@ -19,7 +19,6 @@ using namespace std;
 int main() {
   int N;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  cout << N/10 + N%10 << endl;
 
 }

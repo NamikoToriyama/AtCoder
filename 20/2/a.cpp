@@ -17,9 +17,15 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  int N, s, t, a, W;
+  int ans = 0;
+  cin >> N >> s >> t >> W;
+  if(s<= W && W <= t) ans++;
+  rep(i, N-1){
+    cin >> a;
+    W += a;
+    if(W <= 0) W = 1;
+    if(s<= W && W <= t) ans++;
+  }
+  print(ans);
 }

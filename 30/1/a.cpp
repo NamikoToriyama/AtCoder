@@ -17,9 +17,7 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  int a, d;
+  cin >> a >> d;
+  print(max((a+1)*d, a*(d+1)));
 }

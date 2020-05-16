@@ -19,7 +19,6 @@ using namespace std;
 int main() {
   int N;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  if(N==12) print(1);
+  else print(N+1);
 }

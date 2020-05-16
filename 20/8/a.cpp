@@ -19,7 +19,8 @@ using namespace std;
 int main() {
   int N;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  if(N==100) print("Perfect");
+  else if(N>=90) print("Great");
+  else if(N>=60) print("Good");
+  else print("Bad");
 }

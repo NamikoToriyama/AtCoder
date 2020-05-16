@@ -17,9 +17,8 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  int m, d;
+  cin >> m >> d;
+  if(m%d==0) print("YES");
+  else print("NO");
 }

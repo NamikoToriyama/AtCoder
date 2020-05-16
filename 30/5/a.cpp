@@ -17,9 +17,12 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  double w, h;
+  cin >> w >> h;
+  if(w/h == 4.0/3.0){
+    print("4:3");
+  }
+  else {
+    print("16:9");
+  }
 }

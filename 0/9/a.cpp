@@ -19,7 +19,6 @@ using namespace std;
 int main() {
   int N;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  if(N%2==0) print(N/2);
+  else print(N/2+1);
 }

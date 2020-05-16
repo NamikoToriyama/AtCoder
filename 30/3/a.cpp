@@ -17,9 +17,8 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  string s;
+  cin >> s;
+  if(s[0]==s[1] && s[0]==s[2] && s[0]==s[3]) print("SAME");
+  else print("DIFFERENT");
 }

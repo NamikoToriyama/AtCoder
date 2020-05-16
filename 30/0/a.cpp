@@ -17,9 +17,9 @@ using namespace std;
 #define pb push_back
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  double a, b, c, d;
+  cin >> a >> b >> c >> d;
+  if(b/a == d/c) print("DRAW");
+  else if(b/a > d/c) print("TAKAHASHI");
+  else print("AOKI");
 }
