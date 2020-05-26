@@ -19,9 +19,10 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  int w, a, b;
+  cin >> w >> a >> b;
+  if (a <= b &&  b - (a+w) <= 0) print(0);
+  else if (a > b && a - (b+w) <= 0) print(0);
+  else print( min(abs((a+w) - b), abs((b+w) - a)) );
 
 }

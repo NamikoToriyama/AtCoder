@@ -17,11 +17,15 @@ using namespace std;
 #define pb push_back
 
 const long long INF = 1LL << 60;
+const ll MOD = pow(10, 9) + 7;
 
 int main() {
-  int N;
+  ll ans=1, N;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+
+  rep(i, N){
+    ans = ans * (i+1)%MOD;
+  }
+  print(ans%MOD);
 
 }
