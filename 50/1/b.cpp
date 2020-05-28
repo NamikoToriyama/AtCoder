@@ -20,9 +20,16 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  int k, s;
+  cin >> k >> s;
+  int ans = 0;
 
+  rep(i, k+1){
+    rep(j, k+1){
+      int n = s - (i + j);
+      if(n < 0 ||  n > k) continue;
+      ans++;
+    }
+  }
+  print(ans);
 }

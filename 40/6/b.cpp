@@ -20,9 +20,13 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  ll N, K, ans;
+  cin >> N >> K;
 
+  if(N==1){
+    print(K);
+  } else {
+    ans = K * pow(K-1, N-1);
+    print(ans);
+  }
 }

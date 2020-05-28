@@ -20,9 +20,17 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  int W, H, N, x, y, a;
+  cin >> W >> H >> N;
+  int x1 = 0, x2 = W, y1 = 0, y2 = H;
+  rep(i, N){
+    cin >> x >> y >> a;
+    if (a==1) x1 = max(x1, x);
+    if (a==2) x2 = min(x2, x);
+    if (a==3) y1 = max(y1, y);
+    if (a==4) y2 = min(y2, y);
+  }
 
+  if(x1 < x2 && y1 < y2) print((x2-x1)*(y2-y1));
+  else print(0);
 }

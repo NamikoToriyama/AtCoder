@@ -20,9 +20,19 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
+  int N, M;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  vector<int> a(N);
+  int sum = 0;
+  rep(i, N){
+    cin >> a[i];
+    sum += a[i];
+  }
 
+  cin >> M;
+  int t, x;
+  rep(i, M){
+    cin >> t >> x;
+    print(sum-a[t-1] + x);
+  }
 }

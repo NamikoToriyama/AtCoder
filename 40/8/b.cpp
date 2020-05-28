@@ -20,9 +20,9 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  ll a, b, x;
+  cin >> a >> b >> x;
+  ll ans = b/x - a/x;
+  if (a%x == 0) ans++;
+  print(ans);
 }

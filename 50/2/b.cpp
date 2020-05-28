@@ -21,8 +21,14 @@ const long long INF = 1LL << 60;
 
 int main() {
   int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  string s;
+  int m_num = 0, cnt = 0;
+  cin >> N >> s;
 
+  rep(i, N){
+    if(s[i] == 'D') cnt--;
+    if(s[i] == 'I') cnt++;
+    m_num = max(cnt, m_num);
+  }
+  print(m_num);
 }

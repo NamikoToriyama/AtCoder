@@ -20,9 +20,22 @@ using namespace std;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  string s;
+  cin >> s;
+  int start, end;
+  rep(i, s.size()){
+    if(s[i] == 'A'){
+      start = i;
+      break;
+    }
+  }
+
+  r_rep(i, s.size()){
+    if(s[i] == 'Z'){
+      end = i;
+      break;
+    }
+  }
+  print(end - start + 1);
 
 }
