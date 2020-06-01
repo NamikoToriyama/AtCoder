@@ -16,13 +16,21 @@ using namespace std;
 #define r_rep(i, n) for(int i = n; i >= 0; i--)
 #define ll long long int
 #define pb push_back
-const long long MOD = 1000000007;
+
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
+  int N, ans = 100000;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  rep(i, 5000){
+    rep(j, 500){
+      int S = i*j;
+      if (S == 0) continue;
+      if(S <= N){
+        ans = min(ans, abs(i-j)+N-S);
+      }
+    }
+  }
+  print(ans);
 
 }

@@ -16,13 +16,17 @@ using namespace std;
 #define r_rep(i, n) for(int i = n; i >= 0; i--)
 #define ll long long int
 #define pb push_back
-const long long MOD = 1000000007;
+
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  ll X;
+  cin >> X;
+  for(ll i = 0; i < sqrt(X); i++) {
+    
+    if((i+1)*(i+1)*(i+1)*(i+1) == X) {
+      print(i+1);
+      return 0;
+    }
+  }
 }
