@@ -20,15 +20,38 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N, M, a, sum = 0;
+  int N;
   cin >> N;
-  M = N;
-  rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
-  }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
+  vector<int> a(N);
 
+  rep(i, N){
+    cin >> a[i];
+  }
+  sort(a.begin(), a.end());
+  reverse(a.begin(), a.end());
+  a.erase(std::unique(a.begin(), a.end()), a.end());
+  print(a[1]);
+
+}
+
+void store(){
+  int N;
+  cin >> N;
+  vector<int> a(N);
+
+  rep(i, N){
+    cin >> a[i];
+  }
+  sort(a.begin(), a.end());
+  reverse(a.begin(), a.end());
+
+  int max_v = a[0];
+  int j = 1;
+  while(1){
+    if (max_v != a[j]) {
+      print(a[j]);
+      break;
+    }
+    j++;
+  }
 }

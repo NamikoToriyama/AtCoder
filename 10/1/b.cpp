@@ -19,16 +19,31 @@ using namespace std;
 const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
-int main() {
-  int N, M, a, sum = 0;
-  cin >> N;
-  M = N;
-  rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
+char CapitalToLetter(char c){
+  if (c < 'a' || 'z' < c) {
+    char a = 'a' + (c - 'A');
+    return a;
   }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
+  return c;
+}
+
+char LetterToCapital(char c){
+  if (c < 'A' || 'Z' < c) {
+    char a = 'A' + (c - 'a');
+    return a;
+  }
+  return c;
+}
+
+int main() {
+  string s, ans = "";
+  cin >> s;
+
+  char c = s[0];
+  ans += LetterToCapital(c);
+  for (int i = 1; i < s.size(); i++){
+    ans +=CapitalToLetter(s[i]);
+  }
+  print(ans);
 
 }

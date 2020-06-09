@@ -20,15 +20,17 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N, M, a, sum = 0;
-  cin >> N;
-  M = N;
+  string s;
+  int N;
+  cin >> s >> N;
+  int l, r;
+  char tmp;
   rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
+    cin >> l >> r;
+    l--;
+    reverse(&s[l], &s[r]);
   }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
+  
+  print(s);
 
 }

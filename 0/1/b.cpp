@@ -20,15 +20,15 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N, M, a, sum = 0;
+  int N, ans;
   cin >> N;
-  M = N;
-  rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
-  }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
+  int km = N/1000;
 
+  if(N < 100) ans = 0;
+  else if (N <= 5000) ans = N/100;
+  else if (N <= 30000) ans = km + 50;
+  else if (N <= 70000) ans = ( N/1000 - 30) / 5 + 80;
+  else ans = 89;
+  
+  cout << setfill('0') << setw(2) << ans << endl;
 }

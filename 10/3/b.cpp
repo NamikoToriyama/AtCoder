@@ -20,15 +20,8 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N, M, a, sum = 0;
-  cin >> N;
-  M = N;
-  rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
-  }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
+  int a, b;
+  cin >> a >> b;
+  print(min(abs(a-b), min(abs(10+b-a), abs(10+a-b))));
 
 }

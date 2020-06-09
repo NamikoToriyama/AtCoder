@@ -20,15 +20,23 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N, M, a, sum = 0;
-  cin >> N;
-  M = N;
-  rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
+  string s;
+  cin >> s;
+  bool flag = true;
+  int cnt = 0; char c;
+  while(cnt < s.size()){
+    c = s[cnt];
+    if(c == 'c') {
+      cnt++;
+      if(cnt >= s.size() && s[cnt] != 'h') flag = false;
+    } else if (c == 'o' || c == 'k' || c == 'u') {
+      // 何もしない
+    } else {
+      flag = false;
+      break;
+    }
+    cnt++;
   }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
-
+  if(flag) print("YES");
+  else print("NO");
 }

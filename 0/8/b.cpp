@@ -20,15 +20,31 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N, M, a, sum = 0;
+  int N;
+  string s;
   cin >> N;
-  M = N;
+
+  map<string, int> person;
+
   rep(i, N){
-    cin >> a;
-    sum += a;
-    if (a == 0) M--;
+    cin >> s;
+    if ( person.find(s) != person.end() ) {
+      person[s]++;
+    } else {
+      person.insert(make_pair(s, 1));
+    }
   }
-  if(sum%M != 0) print(sum/M+1);
-  else print(sum/M);
+
+  int m_v = 0;
+  string ans = "";
+  for(auto itr = person.begin(); itr != person.end(); ++itr){
+    string key = itr->first;
+    int value = itr->second;
+    if(value > m_v){
+      m_v = value;
+      ans = key;
+    }
+  }
+  print(ans);
 
 }
