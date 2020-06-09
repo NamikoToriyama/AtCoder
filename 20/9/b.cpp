@@ -20,9 +20,13 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  string s;
+  int cnt = 0;
+  rep(i, 12){
+    cin >> s;
+    if (s.find("r") != std::string::npos) {
+      cnt++;
+    }
+  }
+  print(cnt);
 }

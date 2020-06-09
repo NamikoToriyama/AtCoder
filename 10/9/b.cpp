@@ -19,10 +19,24 @@ using namespace std;
 const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
-int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+void RunLengthEncoding(string s){
+  char c = s[0];
+  int cnt = 0;
+  for(char i: s){
+    if(c==i){
+      cnt++;
+    } else {
+      cout << c << cnt;
+      c = i;
+      cnt = 1;
+    }
+  }
+  cout << c << cnt;
+  cout << endl;
+}
 
+int main() {
+  string s;
+  cin >> s;
+  RunLengthEncoding(s);
 }

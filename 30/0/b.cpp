@@ -20,9 +20,11 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  double n, m;
+  cin >> n >> m;
+  if(n >= 12) n -= 12;
+  double mm = m/60.*360.;
+  double h = n/12.*360.+m/60.*360./12.;
+  double a = abs(h-mm);
+  cout << setprecision(7) << min(a, abs(360-a)) << endl;
 }

@@ -20,9 +20,22 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  int N, a, b, d, ans = 0, len;
+  string s;
+  cin >> N >> a >> b;
 
+  rep(i, N){
+    cin >> s >> d;
+    if (d < a) len = a;
+    else if (b < d) len = b;
+    else len = d;
+    if (s == "East"){
+      ans += len;
+    } else {
+      ans -= len;
+    }
+  }
+  if(ans == 0) print(ans);
+  else if (ans > 0)  prints("East", ans);
+  else prints("West", abs(ans));
 }

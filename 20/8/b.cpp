@@ -20,9 +20,16 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  string s;
+  cin >> s;
+  vector<int> a(6);
 
+  for(char c: s){
+    a[c-'A']++;
+  }
+
+  rep(i, 5){
+    cout << a[i] << " ";
+  }
+  cout << a[5] << endl;
 }

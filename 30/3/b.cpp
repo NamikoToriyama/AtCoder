@@ -20,9 +20,18 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
+  int N, sum=0;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  vector<pair<int, string> > a(N);
 
+  rep(i, N){
+    cin >> a[i].second >> a[i].first;
+    sum += a[i].first;
+  }
+  sort(a.begin(), a.end());
+  if (sum < a[N-1].first*2){
+    print(a[N-1].second);
+  } else {
+    print("atcoder");
+  }
 }

@@ -20,9 +20,20 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  int N, T;
+  cin >> N >> T;
+  vector<int> a(N);
+  int ans = 0;
 
+  rep(i, N){
+    cin >> a[i];
+  }
+
+  rep(i, N-1){
+    if (a[i+1] - a[i] < T) ans += (a[i+1] - a[i]);
+    else ans += T;
+  }
+  ans += T;
+  
+  print(ans);
 }

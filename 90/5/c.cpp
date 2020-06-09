@@ -20,9 +20,23 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  int a, b, c, x, y, sum = 0;
+  cin >> a >> b >> c >> x >> y;
+  int z = min(x, y);
+  int w = max(x, y);
 
+  if(a+b < c*2){
+    sum += a*x + b*y;
+  } else {    
+    sum += c*2*z;
+    x -= z;
+    y -= z;
+    int left = x*a + y*b;
+    if((w-z)*c*2 < left){
+      sum += (w-z)*c*2;
+    } else {
+      sum += left;
+    }
+  }
+  print(sum);
 }

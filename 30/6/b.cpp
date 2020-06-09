@@ -22,7 +22,21 @@ const long long INF = 1LL << 60;
 int main() {
   int N;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  string b;
+  char a[N][N];
+
+  rep(i, N){
+    cin >> b;
+    rep(j, N){
+      a[i][j] = b[j];
+    }
+  }
+
+  rep(i, N){
+    r_rep(j, N){
+      cout << a[j][i];
+    }
+    cout << endl;
+  }
 
 }

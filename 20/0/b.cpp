@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sstream>
 #include <iostream>
 #include <cmath>
 #include <string>
@@ -20,9 +21,8 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
-  cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
-
+  string s, t, a="";
+  cin >> s >> t;
+  a = s + t;
+  cout << stoi(a) * 2 << endl;
 }

@@ -20,9 +20,33 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
+  int N, sum=0;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  vector<int> a(N);
 
+  rep(i, N){
+    cin >> a[i];
+    sum += a[i];
+  }
+
+  if(sum%N != 0){
+    print(-1);
+    return 0;
+  }
+
+  int ave = sum/N;
+  int bridge = N; // とりあえずすべてにかけると仮定する
+  int cnt = 0;
+  sum = 0;
+  rep(i, N){
+    cnt++;
+    sum += a[i];
+    if(sum%cnt == 0 && sum/cnt == ave){
+      cnt = 0;
+      sum = 0;
+      bridge--;
+    }
+  }
+  if (bridge == N) bridge--;
+  print(bridge);
 }

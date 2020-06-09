@@ -20,9 +20,16 @@ const long long MOD = 1000000007;
 const long long INF = 1LL << 60;
 
 int main() {
-  int N;
+  int N, a;
   cin >> N;
-  print(N);
-  cout << setprecision(7) << N << endl;
+  vector<int> bee(100000, 0);
+  int ans = 0;
 
+  rep(i, N){
+    cin >> a;
+    a--;
+    bee[a]++;
+    if (bee[a] > 1) ans++;
+  }
+  print(ans);
 }
